@@ -174,7 +174,7 @@ func (g *TransfersGenerator) generate(position uint, state *genState) *Transacti
 		}
 	}
 
-	askNonce := (position%count == 0)
+	askNonce := true
 
 	return &Transaction{
 		Make:     g.transferTx(from, to, amount, askNonce, g.nonces[position%count:]),
